@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Retro Music Player</title>
+  <style>
+    body {
+      font-family: 'Arial', sans-serif;
+      background-color: #f2f2f2; 
+      color: #333;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      box-sizing: border-box;
+      max-width: 360px;
+      /* min-height: 100vh; */
+    }
+
+    /* Main container */
+    .container {
+      background-color: #d9c5a6;
+      border-radius: 20px;
+      width: 100%;
+      max-width: 360px;
+      padding: 30px;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      height: inherit;
+      overflow: hidden;
+      min-height: 93vh;
+    }
+
+    h1 {
+      font-size: 2.2rem;
+      margin: 15px 0;
+      color: #5a4e3a; 
+      font-weight: bold;
+    }
+
+    /* Song info display */
+    #song-info-display {
+      font-size: 1.2rem;
+      color: #5a4e3a;
+      margin-bottom: 30px;
+      padding: 12px;
+      background-color: #f4f0e6;
+      width: 100%;
+    }
+
+    /* Play button styling */
+    button {
+      background-color: #d9a15b;
+      color: white;
+      font-size: 2.2rem;
+      padding: 15px 25px;
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      margin-top: 30px;
+      margin-bottom: 20px;
+      display: inline-block;
+      font-weight: bold;
+    }
+
+    button:hover {
+      background-color: #cf8d42;
+      transform: scale(1.1);
+    }
+
+    button:active {
+      background-color: #d9a15b;
+      transform: scale(1);
+    }
+
+    /* Lyrics section */
+    #lyrics-display {
+      font-size: 1rem;
+      color: #5a4e3a;
+      background-color: #f4f0e6;
+      padding: 20px;
+      border-radius: 8px;
+      width: 90%;
+      flex-grow: 1;
+      line-height: 1.6;
+      white-space: pre-line;
+      word-wrap: break-word;
+      margin-top: 20px;
+      height: fit-content;
+    }
+  </style>
+  <link rel="stylesheet" href="mystyle.css">
+</head>
+<body>
+  <div class="container">
+    <h2>Youtube Music Lyrics</h2>
+    <!-- <div id="song-info-display">Song info will appear here.</div> -->
+    <div class="player">
+      <h1>Now Playing</h1>
+      <img src="images/Z23N.gif" width="300" height="100">
+      <div class="loop-holder">
+          <h2 id="song-info-display-0" class="loop-text"> • • • • • • • • •</h2>
+          <h2 id="song-info-display-1" class="loop-text"> • • • • • • • • •</h2>
+          <h2 id="song-info-display-2" class="loop-text"> • • • • • • • • •</h2>
+          <h2 id="song-info-display-3" class="loop-text"> • • • • • • • • •</h2>
+          <h2 id="song-info-display-4" class="loop-text"> • • • • • • • • •</h2>
+      </div>
+      <div>
+        <h2 id="author-info-display">Waiting for Song • • •</h2>
+      </div>
+    </div>
+      <!-- <button id="get-song-lyrics-btn">▶ Play</button>  -->
+    <div class="main-body">
+      <div class="circle">
+        <a id="video-btn" href="#">
+          ▶
+        </a>
+      </div>
+    </div>
+    <div id="lyrics-display">Lyrics will appear here.</div>
+  </div>
+  <script src="panel.js"></script>
+</body>
+</html>
