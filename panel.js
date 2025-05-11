@@ -24,34 +24,36 @@ document.addEventListener("DOMContentLoaded", () => {
           target: { tabId: tabs[0].id },
           func: () => {
             // Extract song and artist from the current webpage
-            const inputElement = document.querySelector("#title > h1 > yt-formatted-string");
+            // const inputElement = document.querySelector("#title > h1 > yt-formatted-string");
+            const songElement = document.querySelector("#layout > ytmusic-player-bar > div.middle-controls.style-scope.ytmusic-player-bar > div.content-info-wrapper.style-scope.ytmusic-player-bar > yt-formatted-string")
+            const artistElement = document.querySelector("#layout > ytmusic-player-bar > div.middle-controls.style-scope.ytmusic-player-bar > div.content-info-wrapper.style-scope.ytmusic-player-bar > span > span.subtitle.style-scope.ytmusic-player-bar > yt-formatted-string > a:nth-child(1)")
 
-            const input = inputElement.textContent;
+            const songContent = songElement.textContent;
+            const artistContent = artistElement.textContent;
             
-            const parts = input.split(/[:\-]/);
+            // const parts = input.split(/[:\-]/);
             // let parts = input.split(/\s*[:\-]\s*/);
 
-            const artist = parts[0];
-            const song = parts[1];
+            // const artist = parts[0];
+            // const song = parts[1];
 
-            console.log(artist);  // "Ne-Yo"
-            console.log(song);  // "Mad"
+            console.log(songContent);  // "Ne-Yo"
+            console.log(artistContent);  // "Mad"
 
             // const songElement = song.replace(/(?:\s(ft\.|featuring|feat\.).*)/i, "").replace(/\[[^\]]*\]/, "").trim();
-            const songElement = song.replace(/\s*\([^()]*\)\s*/g, "").replace(/(?:\s(ft\.|featuring|feat\.).*)/i, "").replace(/\[[^\]]*\]/, "").trim();
-            const artistElement = artist.replace(/,.*$/, "").replace(/\bthe\b/i, "").trim();
+            // const songElement = song.replace(/\s*\([^()]*\)\s*/g, "").replace(/(?:\s(ft\.|featuring|feat\.).*)/i, "").replace(/\[[^\]]*\]/, "").trim();
+            // const artistElement = artist.replace(/,.*$/, "").replace(/\bthe\b/i, "").trim();
 
-            console.log(encodeURIComponent(artistElement));
-            console.log(encodeURIComponent(songElement));
+            // console.log(encodeURIComponent(songContent));
+            // console.log(encodeURIComponent(artistContent));
 
             // let songElement = songTitle.split(" ft.")[0];
-
-            console.log("Author:", artistElement);
-            console.log("Song:", songElement);
+            // console.log("Song:", songContent);
+            // console.log("Author:", artistContent);
 
             return {
-              songName: songElement,
-              artistName: artistElement,
+              songName: songContent,
+              artistName: artistContent,
             };
           },
         },

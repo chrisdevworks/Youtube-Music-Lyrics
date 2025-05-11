@@ -15,7 +15,9 @@
   },
   "content_scripts": [
     {
-      "matches": ["https://www.youtube.com/*"],
+      "matches": ["https://www.youtube.com/*", "https://music.youtube.com/*"],
+      "js": ["panel.js"],
+      "css": ["mystyle.css"]
     }
   ],
   "action": {
@@ -38,7 +40,8 @@
   "host_permissions": [
     "https://cors-anywhere.herokuapp.com/*",
     "https://www.youtube.com/*",
-    "https://api.textyl.co/*"
+    "https://api.textyl.co/*",
+    "https://music.youtube.com/*"
   ]
 }
 
